@@ -44,7 +44,7 @@ jobs:
 #         run: gh run download ${{ github.event.workflow_run.id }}
         run: gh run --help
       - name: check gh version
-        run: gh --version
+        run: brew upgrade gh
         
       - name: check if file downloaded
         run: ls
