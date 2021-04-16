@@ -43,6 +43,8 @@ jobs:
       - name: Download Artifact
 #         run: gh run download ${{ github.event.workflow_run.id }}
         run: gh run --help
+      - name: check gh version
+        run: gh --version
         
       - name: check if file downloaded
         run: ls
