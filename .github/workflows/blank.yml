@@ -19,6 +19,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,8 +28,8 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: Authenticate to Github token
-        run: gh auth login --with-token < echo ${{ secrets.GITHUB_TOKEN }}
+#       - name: Authenticate to Github token
+#         run: gh auth login --with-token < echo ${{ secrets.GITHUB_TOKEN }}
       - name: view repo
         run: gh repo view 
 
