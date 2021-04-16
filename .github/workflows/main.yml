@@ -44,17 +44,11 @@ jobs:
           sudo apt install gh
 
 #       # Runs a set of commands using the runners shell
-#       - name: Download Artifact
-# #         run: gh run download ${{ github.event.workflow_run.id }}
-#         run: sudo ap-add-repository https://cli.github.com/packages
-#       - name: check gh version
-#         run: |
-#           sudo apt update
+      - name: Download Artifact
+        run: gh run download ${{ github.event.workflow_run.id }} -n application
+      
+      - name: Check files
+        run: ls
        
 
-        
-#       - name: check if file downloaded
-#         run: sudo apt install gh
-      - name: check version
-        run: gh --version
   
