@@ -36,21 +36,25 @@ jobs:
       # Runs a single command using the runners shell
 #       - name: Authenticate to Github token
 #         run: gh auth login --with-token < echo ${{ secrets.GITHUB_TOKEN }}
-      - name: view repo
-        run: gh repo view 
-
-      # Runs a set of commands using the runners shell
-      - name: Download Artifact
-#         run: gh run download ${{ github.event.workflow_run.id }}
-        run: gh run --help
-      - name: check gh version
+      - name: Install Github CLI
         run: |
+          sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+          sudo apt-add-repository https://cli.github.com/packages
           sudo apt update
+          sudo apt install gh
+
+#       # Runs a set of commands using the runners shell
+#       - name: Download Artifact
+# #         run: gh run download ${{ github.event.workflow_run.id }}
+#         run: sudo ap-add-repository https://cli.github.com/packages
+#       - name: check gh version
+#         run: |
+#           sudo apt update
        
 
         
-      - name: check if file downloaded
-        run: sudo apt install gh
+#       - name: check if file downloaded
+#         run: sudo apt install gh
       - name: check version
         run: gh --version
   
