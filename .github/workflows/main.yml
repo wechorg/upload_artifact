@@ -41,7 +41,7 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Download Artifact
-        run: gh run download ${{ github.event.workflow_run.id }} -n application
+        run: gh run download ${{ github.event.workflow_run.id }} --name application
         
       - name: check if file downloaded
         run: ls
