@@ -46,9 +46,9 @@ jobs:
       - name: check gh version
         run: |
           brew install gh
-          brew upgrade gh
-          gh --version
+       
+
         
       - name: check if file downloaded
-        run: ls
+        run: brew upgrade gh
   
